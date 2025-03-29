@@ -67,7 +67,13 @@ for address, pins in PINS.items():
     for index, pin in enumerate(pins):
         fireflies.append(Firefly(pin=pin, name=f"{hex(address)}-{index}"))
 
-# Now loop blinking the pin 0 output and reading the state of pin 1 input.
-while True:
+# Loop through the fireflies and toggle them
+try:
+    while True:
+        for firefly in fireflies:
+            firefly.toggle_if_ready()
+except KeyboardInterrupt:
+    # If the user types Ctrl-C, darken all fireflies before exiting
     for firefly in fireflies:
-        firefly.toggle_if_ready()
+        firefly.flash(False)
+
