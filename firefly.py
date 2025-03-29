@@ -14,9 +14,10 @@ import time
 DEBUG = True
 
 # Parameters for flashing
-LIGHT_TIME = 0.5
+# These times are consistent with male Photinus pyralis
+LIGHT_TIME = 0.75
 MIN_DARK_TIME = 5.0
-MAX_DARK_TIME = 10.0
+MAX_DARK_TIME = 7.0
 
 class Firefly:
     """
