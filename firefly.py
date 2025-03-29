@@ -31,8 +31,8 @@ class Firefly:
         self.name = name
 
         # Initialize the times flash started and ended
-        self.flash_start = current_time
-        self.flash_end = current_time
+        self.flash_start = None
+        self.flash_end = current_time - random.uniform(0, MAX_DARK_TIME)
 
         # Firefly is dark by default
         self.pin.value = False
