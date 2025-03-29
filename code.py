@@ -65,7 +65,7 @@ for address, pins in MCPS.items():
 # Create an instance of the Firefly class for each pin
 for address, pins in PINS.items():
     for index, pin in enumerate(pins):
-        fireflies.append(Firefly(pin=pin, name=f"{address:02x}-{index}"))
+        fireflies.append(Firefly(pin=pin, name=f"{hex(address)}-{index}"))
 
 # Now loop blinking the pin 0 output and reading the state of pin 1 input.
 while True:
